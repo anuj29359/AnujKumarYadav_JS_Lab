@@ -72,6 +72,7 @@ function handleOptionButton(id, choice){
         var isCorrect = quiz.checkOptionWithAnswer(choice);
         //load the next question
         highlightOptionButton(isCorrect, id);
+        //change the bg-color of the button green if the selected option is correct otherwise red for 2ms.
         setTimeout(() => { document.getElementById(id).style.backgroundColor="#01BBFF"; loadQuiz(quiz); }, 200);
         
         console.log(id)
