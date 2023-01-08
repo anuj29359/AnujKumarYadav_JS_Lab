@@ -5,3 +5,16 @@ Create a Quiz application which will have some questions along with four options
 User can select an option out of the given four options. In case the user selects the correct option  a score will be awarded to the user else not.
 
 After all the questions have been answered display the score of the user along with the total percentage of correctly answered questions out of the all questions displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/anuj29359/AnujKumarYadav_JS_Lab.git
