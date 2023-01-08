@@ -35,11 +35,13 @@ function Quiz(questions){
 var quiz = new Quiz(questions);
 
 Quiz.prototype.checkOptionWithAnswer = function(answer){
+    var isCorrect = false;
     if(this.getQuestionByIndex().isCorrectAnswer(answer)){
         this.score++;
+        isCorrect = true;
     }
     this.questionindex++;
-
+    return isCorrect;
 }
 
 Quiz.prototype.getQuestionByIndex = function(){
@@ -50,14 +52,28 @@ Quiz.prototype.isEnded = function(){
     return (this.questions.length) == (this.questionindex);
 }
 
+function highlightOptionButton(isCorrect, id){
+    const el = document.getElementById(id);
+    if(isCorrect){
+        el.style.backgroundColor="green";
+        
+    }
+    else{
+        el.style.backgroundColor="red";
+    }
+    
+}
+
 function handleOptionButton(id, choice){
     var button = document.getElementById(id);
     button.onclick= function(){
         //check the answer
 
-        quiz.checkOptionWithAnswer(choice);
+        var isCorrect = quiz.checkOptionWithAnswer(choice);
         //load the next question
-        loadQuiz(quiz);
+        highlightOptionButton(isCorrect, id);
+        setTimeout(() => { document.getElementById(id).style.backgroundColor="#01BBFF"; loadQuiz(quiz); }, 200);
+        
         console.log(id)
     }
 }
