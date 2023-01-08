@@ -19,7 +19,9 @@ function Question(text, choices, answer){
 var questions = [
     new Question("javascript supports...", ["Functions","XHTML", "HTML", "CSS"], "Functions"),
     new Question("javascript is {} programing language",["compiled", "interpreted", "OPS", "machine-level"],"interpreted"),
-    new Question("Which is used for connecting to dtabase?",["JS", "HTML","PHP","All of the above"],"PHP")
+    new Question("Which is used for connecting to dtabase?",["JS", "HTML","PHP","All of the above"],"PHP"),
+    new Question("Which of the following keywords is used to define a variable in Javascript",["var", "let", "Both - var and let", "None of these"], "Both - var and let" )
+
 ];
 
 Question.prototype.isCorrectAnswer = function(ans){
